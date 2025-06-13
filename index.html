@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Punit Kumar Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #000000;
+      color: #f5f5f5;
+    }
+    header {
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #8B008B;
+      color: white;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    nav {
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #0dcaf0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    section {
+      padding: 30px 15px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #000;
+    }
+    .section-title {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #0dcaf0;
+      margin: 10px auto 0;
+    }
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .about-container img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #0dcaf0;
+    }
+    .about-container p {
+      text-align: center;
+      max-width: 700px;
+    }
+    .tab-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab-buttons button {
+      background: #1a1a1a;
+      color: #0dcaf0;
+      border: 1px solid #0dcaf0;
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .tab-buttons button.active {
+      background: #0dcaf0;
+      color: #000;
+    }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+    .card img.sticker {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: grid;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 13px;
+    }
+    a {
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Punit Kumar</h1>
+    <p>B.Tech 2nd Year | Artificial Intelligence Student</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-container">
+      <img src="punit.jpg" alt="Punit Kumar Photo">
+      <p>Hello! I'm <strong>Punit Kumar</strong>, a passionate and curious B.Tech 2nd Year Artificial Intelligence student at Government Engineering College, Jaipur. I love blending creativity with technology to build innovative solutions that solve real-world problems.</p>
+      <p>My journey into tech began with a deep interest in Machine Learning, IoT, and Web Development. I’ve gained hands-on experience through workshops, internships, and personal projects—always driven by a hunger to learn and grow.</p>
+    </div>
+  </section>
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="tab-buttons">
+      <button onclick="showTab('frontend')" class="active">Frontend</button>
+      <button onclick="showTab('backend')">Backend</button>
+      <button onclick="showTab('tools')">Tools</button>
+      <button onclick="showTab('others')">Others</button>
+    </div>
+    <div id="frontend" class="tab-content active">
+      <div class="cards-container">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="sticker" alt="HTML"><div>HTML</div></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="sticker" alt="CSS"><div>CSS</div></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="sticker" alt="JavaScript"><div>JavaScript</div></div>
+      </div>
+    </div>
+    <div id="backend" class="tab-content">
+      <div class="cards-container">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" class="sticker" alt="Python"><div>Python</div></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" class="sticker" alt="Node.js"><div>Node.js</div></div>
+      </div>
+    </div>
+    <div id="tools" class="tab-content">
+      <div class="cards-container">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" class="sticker" alt="Git"><div>Git</div></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969949.png" class="sticker" alt="VS Code"><div>VS Code</div></div>
+      </div>
+    </div>
+    <div id="others" class="tab-content">
+      <div class="cards-container">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" class="sticker" alt="MySQL"><div>MySQL</div></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/873/873120.png" class="sticker" alt="Excel"><div>Excel</div></div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+  <!-- Projects Section -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="cards-container">
+    <div class="card">
+      <h3>AI Chatbot</h3>
+      <p>Developed a conversational AI chatbot using Python and NLTK, designed to simulate human-like interactions for educational and customer support use cases.</p>
+    </div>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Designed and deployed this personal portfolio site using HTML, CSS, and JavaScript to highlight academic and project achievements.</p>
+    </div>
+    <div class="card">
+      <h3>COVID-19 Severity Predictor</h3>
+      <p>Created a machine learning model that predicts the severity of COVID-19 based on user symptoms and other medical data inputs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates">
+  <h2 class="section-title">Certificates</h2>
+  <div class="cards-container">
+    <div class="card">
+      <h3>AI Workshop</h3>
+      <p>Participated in the Artificial Intelligence Workshop hosted by Techgyan Technologies in collaboration with IIT Delhi on 2nd March 2025.</p>
+    </div>
+    <div class="card">
+      <h3>Deep Learning Fundamentals</h3>
+      <p>Earned a certificate from NVIDIA for completing their "Fundamentals of Deep Learning" program, covering CNNs and neural network basics.</p>
+    </div>
+    <div class="card">
+      <h3>AI/ML in Geodata</h3>
+      <p>Completed the "AI/ML in Geodata Analysis" program offered by ISRO and IIRS from 19–23 August 2024, focusing on spatial data intelligence.</p>
+    </div>
+    <div class="card">
+      <h3>ML & IoT Basics</h3>
+      <p>Underwent training in the fundamentals of Machine Learning and IoT at MIIC Jaipur in collaboration with Svaarogym Medical Devices, July 2024.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="cards-container">
+    <div class="card">
+      <h3>Email</h3>
+      <p><a href="mailto:punitkumarmorawal2003@gmail.com">punitkumarmorawal2003@gmail.com</a></p>
+    </div>
+    <div class="card">
+      <h3>Phone</h3>
+      <p><a href="tel:+916375987404">+91 63759 87404</a></p>
+    </div>
+    <div class="card">
+      <h3>GitHub</h3>
+      <p><a href="https://github.com/punitkumar756" target="_blank">github.com/punitkumar756</a></p>
+    </div>
+    <div class="card">
+      <h3>LinkedIn</h3>
+      <p><a href="https://www.linkedin.com/in/punit-kumar-369189292/" target="_blank">linkedin.com/in/punit-kumar</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+    &copy; 2025 Punit Kumar. All rights reserved.
+</footer>
+
+</body>
+</html>
